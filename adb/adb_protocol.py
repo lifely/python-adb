@@ -186,8 +186,8 @@ class AdbMessage(object):
     # The checksum is just a sum of all the bytes. I swear.
     if isinstance(data, bytearray):
         total = sum(data)
-    elif isinstance(data, bytes):
-        total = sum(map(ord, data.decode('ascii')))
+    # elif isinstance(data, bytes):
+    #     total = sum(map(ord, data.decode('ascii')))
     else:
         total = sum(map(ord, data))
     return total & 0xFFFFFFFF
